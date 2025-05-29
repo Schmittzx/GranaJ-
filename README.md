@@ -48,3 +48,15 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+O projeto GranaJá é construído com as seguintes tecnologias e bibliotecas:
+
+-   **[React Native](https://reactnative.dev/)**: Framework para construção de aplicativos móveis nativos usando JavaScript/TypeScript.
+-   **[Expo](https://expo.dev/)**: Ferramenta para simplificar o desenvolvimento, build e deploy de aplicativos React Native. Facilita o desenvolvimento sem a necessidade de configurar ambientes nativos complexos.
+-   **[TypeScript](https://www.typescriptlang.org/)**: Superconjunto tipado do JavaScript que adiciona tipagem estática, melhorando a manutenibilidade e escalabilidade do código.
+-   **[Expo Router](https://docs.expo.dev/router/):** Sistema de roteamento baseado em arquivos para Expo e React Native, que simplifica a navegação entre telas, incluindo navegação por abas (tabs) e rotas aninhadas.
+-   **[`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage):** API de armazenamento chave-valor persistente e assíncrona para React Native, usada aqui para simular um banco de dados local.
+-   **[`react-native-paper`](https://callstack.github.io/react-native-paper/):** Biblioteca de componentes UI de alta qualidade que seguem as diretrizes do Material Design, proporcionando uma interface limpa e consistente.
+-   **[`@expo/vector-icons`](https://docs.expo.dev/guides/icons/):** Pacote que facilita o uso de uma vasta coleção de ícones (como MaterialCommunityIcons, FontAwesome, etc.) em seu aplicativo.
+-   **[`date-fns`](https://date-fns.org/):** Biblioteca moderna de utilitários de data JavaScript, usada para formatação e manipulação de datas de forma eficiente.
+-   **[`react-native-safe-area-context`](https://github.com/th3rdwave/react-native-safe-area-context):** Fornece um Hook e um Componente para acessar as insets da área segura do dispositivo, garantindo que o conteúdo não seja cortado por entalhes (notches), barras de status ou home indicators.
