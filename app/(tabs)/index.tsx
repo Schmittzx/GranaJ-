@@ -1,75 +1,130 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { Card, Paragraph, Text, Title } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Colors from '../../constants/Colors';
+import { useTransactions } from '../../data/TransactionContext';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+const HomeScreen: React.FC = () => {
+  const { getBalance, loading } = useTransactions();
+  const { totalEntries, totalExits, currentBalance } = getBalance();
 
-export default function HomeScreen() {
+  const balanceColor = currentBalance >= 0 ? Colors.success : Colors.danger;
+
+  if (loading) {
+    return (
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.loadingContainer}>
+          <Text style={styles.loadingText}>Carregando dados financeiros...</Text>
+        </View>
+      </SafeAreaView>
+    );
+  }
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <Title style={styles.header}>Resumo Financeiro</Title>
+
+        <Card style={styles.balanceCard}>
+          <Card.Content>
+            <Paragraph style={styles.cardLabel}>Saldo Atual</Paragraph>
+            <Title style={[styles.balanceValue, { color: balanceColor }]}>
+              R$ {currentBalance.toFixed(2).replace('.', ',')}
+            </Title>
+          </Card.Content>
+        </Card>
+
+        <View style={styles.summaryCardsContainer}>
+          <Card style={[styles.summaryCard, styles.entriesCard]}>
+            <Card.Content>
+              <Paragraph style={styles.cardLabel}>Entradas</Paragraph>
+              <Title style={[styles.summaryValue, { color: Colors.success }]}>
+                R$ {totalEntries.toFixed(2).replace('.', ',')}
+              </Title>
+            </Card.Content>
+          </Card>
+
+          <Card style={[styles.summaryCard, styles.exitsCard]}>
+            <Card.Content>
+              <Paragraph style={styles.cardLabel}>Saídas</Paragraph>
+              <Title style={[styles.summaryValue, { color: Colors.danger }]}>
+                R$ {totalExits.toFixed(2).replace('.', ',')}
+              </Title>
+            </Card.Content>
+          </Card>
+        </View>
+      </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
+  safeArea: {
+    flex: 1,
+    backgroundColor: Colors.background,
+  },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
-    gap: 8,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  loadingText: {
+    fontSize: 18,
+    color: Colors.textSecondary,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  container: {
+    flex: 1,
+    padding: 20,
+    alignItems: 'center',
+  },
+  header: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 30,
+    color: Colors.textPrimary,
+    textAlign: 'center',
+  },
+  balanceCard: {
+    width: '100%',
+    marginBottom: 20,
+    elevation: 5,
+    borderRadius: 12,
+    backgroundColor: Colors.cardBackground,
+    paddingVertical: 10,
+  },
+  cardLabel: {
+    fontSize: 18,
+    color: Colors.textSecondary,
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+  balanceValue: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  summaryCardsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginBottom: 20,
+  },
+  summaryCard: {
+    flex: 1,
+    marginHorizontal: 5,
+    elevation: 3,
+    borderRadius: 10,
+    backgroundColor: Colors.cardBackground,
+    paddingVertical: 8,
+  },
+  entriesCard: {},
+  exitsCard: {},
+  summaryValue: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
+
+export default HomeScreen;
