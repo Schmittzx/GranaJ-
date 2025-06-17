@@ -1,6 +1,5 @@
 # 💰 GranaJá - Seu Controle Financeiro Pessoal
 
-![Ícone do GranaJá](https://raw.githubusercontent.com/Schmittzx/GranaJ-/master/assets/icon.png)
 
 ## 📝 Descrição
 
