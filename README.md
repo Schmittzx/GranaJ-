@@ -17,19 +17,6 @@ GranaJá é um aplicativo móvel desenvolvido como parte de um projeto de estudo
 * **Persistência de Dados na Nuvem:** Todas as informações são salvas em um banco de dados PostgreSQL na nuvem utilizando o Supabase.
 * **Interface Refinada:** Layout limpo, com ícones e componentes da biblioteca React Native Paper para uma experiência de usuário agradável.
 
-## 📸 Screenshots
-
-*Substitua os placeholders abaixo pelas suas screenshots. Para obter o link, você pode arrastar e soltar a imagem em um comentário de uma "Issue" no seu GitHub e copiar o link que ele gera.*
-
-| Tela de Resumo | Lista de Transações | Adicionar Transação |
-| :---: |:---:|:---:|
-| *![Screenshot da Tela de Resumo](link_para_sua_imagem_aqui.png)* | *![Screenshot da Tela de Lista](link_para_sua_imagem_aqui.png)* | *![Screenshot da Tela de Adicionar](link_para_sua_imagem_aqui.png)* |
-
-| Detalhes da Transação | Editar Transação | Alerta de Exclusão |
-| :---: |:---:|:---:|
-| *![Screenshot da Tela de Detalhes](link_para_sua_imagem_aqui.png)* | *![Screenshot da Tela de Edição](link_para_sua_imagem_aqui.png)* | *![Screenshot do Alerta](link_para_sua_imagem_aqui.png)* |
-
-
 ## 🛠️ Tecnologias Utilizadas
 
 * **React Native**
