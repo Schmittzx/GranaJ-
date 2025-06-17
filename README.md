@@ -1,50 +1,48 @@
-# Welcome to your Expo app 👋
+# 💰 GranaJá - Seu Controle Financeiro Pessoal
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Ícone do GranaJá](https://raw.githubusercontent.com/Schmittzx/GranaJ-/master/assets/icon.png)
 
-## Get started
+## 📝 Descrição
 
-1. Install dependencies
+GranaJá é um aplicativo móvel desenvolvido como parte de um projeto de estudo para ajudar no controle de finanças pessoais. Com uma interface simples e intuitiva, o aplicativo permite que o usuário registre suas entradas e saídas, visualize um resumo financeiro e gerencie suas transações de forma eficaz. Este projeto foi construído utilizando React Native com Expo e integra-se com o Supabase para persistência de dados.
 
-   ```bash
-   npm install
-   ```
+## ✨ Funcionalidades Principais
 
-2. Start the app
+* **CRUD Completo de Transações:**
+    * **Adicionar:** Formulário para registrar novas receitas ou despesas.
+    * **Listar:** Tela com um histórico completo de todas as transações, com scroll infinito e "puxar para atualizar".
+    * **Detalhes:** Visualização de detalhes completos de uma transação específica.
+    * **Editar:** Formulário preenchido para atualizar informações de uma transação existente.
+    * **Excluir:** Opção para deletar transações com um alerta de confirmação.
+* **Resumo Financeiro:** Um painel na tela inicial que exibe o total de entradas, saídas e o saldo atual, com cores indicativas.
+* **Persistência de Dados na Nuvem:** Todas as informações são salvas em um banco de dados PostgreSQL na nuvem utilizando o Supabase.
+* **Interface Refinada:** Layout limpo, com ícones e componentes da biblioteca React Native Paper para uma experiência de usuário agradável.
 
-   ```bash
-   npx expo start
-   ```
+## 📸 Screenshots
 
-In the output, you'll find options to open the app in a
+*Substitua os placeholders abaixo pelas suas screenshots. Para obter o link, você pode arrastar e soltar a imagem em um comentário de uma "Issue" no seu GitHub e copiar o link que ele gera.*
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| Tela de Resumo | Lista de Transações | Adicionar Transação |
+| :---: |:---:|:---:|
+| *![Screenshot da Tela de Resumo](link_para_sua_imagem_aqui.png)* | *![Screenshot da Tela de Lista](link_para_sua_imagem_aqui.png)* | *![Screenshot da Tela de Adicionar](link_para_sua_imagem_aqui.png)* |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+| Detalhes da Transação | Editar Transação | Alerta de Exclusão |
+| :---: |:---:|:---:|
+| *![Screenshot da Tela de Detalhes](link_para_sua_imagem_aqui.png)* | *![Screenshot da Tela de Edição](link_para_sua_imagem_aqui.png)* | *![Screenshot do Alerta](link_para_sua_imagem_aqui.png)* |
 
-## Get a fresh project
 
-When you're ready, run:
+## 🛠️ Tecnologias Utilizadas
 
-```bash
-npm run reset-project
-```
+* **React Native**
+* **Expo** (com Expo Router para navegação)
+* **TypeScript**
+* **Supabase** (Banco de dados PostgreSQL e Autenticação)
+* **React Native Paper** (Biblioteca de componentes de UI)
+* **date-fns** (Para formatação de datas)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🚀 Como Rodar o Projeto
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Pré-requisitos
+* [Node.js](https://nodejs.org/) (versão LTS)
+* [npm](https://www.npmjs.com/) ou [Yarn](https://yarnpkg.com/)
+* [Expo Go](https://expo.dev/client) app no seu smartphone (Android ou iOS)
