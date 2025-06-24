@@ -16,20 +16,6 @@ Aplicativo para gerenciamento de finanças pessoais que permite o controle de re
 
 ---
 
-## Screenshots
-*Substitua os textos abaixo pelos links das suas imagens.*
-
-**Tela de Resumo:**
-*[COLE O LINK DA IMAGEM AQUI]*
-
-**Tela de Lista de Transações:**
-*[COLE O LINK DA IMAGEM AQUI]*
-
-**Tela de Edição:**
-*[COLE O LINK DA IMAGEM AQUI]*
-
----
-
 ## Tecnologias
 - React Native (com Expo)
 - TypeScript
