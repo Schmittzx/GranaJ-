@@ -67,7 +67,7 @@ export default function RootLayout() {
     <PaperProvider>
       <TransactionProvider>
         <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="tabs" options={{ headerShown: false }} />
           {}
         </Stack>
       </TransactionProvider>
