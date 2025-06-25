@@ -50,8 +50,7 @@ export default function TabLayout() {
         }}
       />
 
-      {/* 👇 MUDANÇA APLICADA AQUI 👇 */}
-      {/* Esta linha diz ao Expo Router para não criar um botão na barra de abas para a rota "explore" */}
+      
       <Tabs.Screen
         name="explore"
         options={{
