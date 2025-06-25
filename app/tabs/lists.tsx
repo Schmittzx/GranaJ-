@@ -21,11 +21,11 @@ import Colors from '../../constants/Colors';
 import { useTransactions } from '../../data/TransactionContext';
 export default function TransactionListScreen() {
   const { transactions, loading, loadTransactions, dbError } = useTransactions();
-  const theme = useTheme(); // Para usar cores do tema do React Native Paper
+  const theme = useTheme(); 
 
   const onRefresh = useCallback(async () => {
     console.log('Atualizando lista de transações...');
-    await loadTransactions(); // Função do contexto para recarregar do Supabase
+    await loadTransactions(); 
   }, [loadTransactions]);
 
   const renderTransactionItem = ({ item }: { item: Transaction }) => {
@@ -34,11 +34,10 @@ export default function TransactionListScreen() {
   const iconName = isEntrada ? 'arrow-up-circle-outline' : 'arrow-down-circle-outline';
 
   return (
-    // 👇 A mudança está aqui, na propriedade 'href' do Link 👇
     <Link
       href={{
-        pathname: "/transaction/[id]", // O caminho do arquivo da rota dinâmica
-        params: { id: item.id },      // Um objeto com os parâmetros
+        pathname: "/transaction/[id]", 
+        params: { id: item.id },      
       }}
       asChild
     >
@@ -119,7 +118,7 @@ export default function TransactionListScreen() {
   );
 }
 
-// Seus estilos permanecem os mesmos
+
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
